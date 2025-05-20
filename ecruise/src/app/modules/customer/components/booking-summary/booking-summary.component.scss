@@ -1,0 +1,78 @@
+/* Parent container */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000 !important; /* Always black */
+  padding: 20px;
+}
+
+/* Child (summary card) */
+.child {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 198, 255, 0.2), 0 4px 12px rgba(0, 198, 255, 0.1);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform: translateY(-50px);
+  transition: transform 0.5s, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.child:hover {
+  transform: translateY(-40px);
+  box-shadow: 0 16px 28px rgba(0, 198, 255, 0.3);
+}
+
+/* Heading */
+.child h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #00c6ff;
+}
+
+/* Section headers */
+.child h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #00c6ff;
+  border-bottom: 1px solid rgba(0, 198, 255, 0.3);
+  padding-bottom: 4px;
+}
+
+/* Lists */
+.child ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.child li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Bold labels */
+.child li strong {
+  color: #00c6ff;
+  font-weight: 600;
+}
+
+/* Pay button */
+button[nz-button] {
+  margin-top: 20px;
+  background-color: #00c6ff !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button[nz-button]:hover {
+  background-color: #00e1ff !important;
+  transform: translateY(-2px);
+}

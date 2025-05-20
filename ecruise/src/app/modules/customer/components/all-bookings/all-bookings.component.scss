@@ -1,0 +1,67 @@
+/* Booking grid */
+.booking-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  background-color: #121212; /* Dark background */
+}
+
+/* Booking container */
+.booking-container {
+  width: 320px;
+  padding: 20px;
+  background: linear-gradient(145deg, #1e1e1e, #2c2c2c); /* Dark gradient */
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.2); /* Neon glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover effect */
+.booking-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.6);
+}
+
+/* Section headings */
+.booking-details h3 {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: #00c6ff;
+  border-bottom: 1px solid rgba(0, 198, 255, 0.3);
+  padding-bottom: 4px;
+}
+
+/* List styles */
+.booking-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.booking-details li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* Bold label text */
+.booking-details li strong {
+  color: #00c6ff;
+  font-weight: 600;
+}
+
+/* Optional glow effect for highlighted values */
+.booking-details li span,
+.booking-details li {
+  color: #e0e0e0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .booking-container {
+    width: 90%;
+  }
+}

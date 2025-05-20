@@ -1,0 +1,30 @@
+<div style="margin-top: 50px">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working.. ">
+    <div class="parent">
+      <div class="child">
+        <div nz-row class="imgDiv">
+          <!-- <h2 style="margin-left: 230px">Post Activity</h2> -->
+        </div>
+
+        <!-- Activity boxes -->
+        <div class="activity-container">
+          <div class="activity-box" *ngFor="let activity of activities">
+            <div class="activity-details">
+              <p><strong>Activity ID:</strong> {{ activity.activityId }}</p>
+              <p><strong>Cruise ID:</strong> {{ activity.cruiseId }}</p>
+              <p><strong>Name:</strong> {{ activity.name }}</p>
+              <p><strong>Type:</strong> {{ activity.type }}</p>
+              <p><strong>Location:</strong> {{ activity.location }}</p>
+              <p><strong>Price:</strong> {{ activity.price }}</p>
+              <div class="Button" style="float: right;">
+                <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/admin/activities/{{activity.activityId}}">Update</button>
+                <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteActivity(activity.activityId)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nz-spin>
+</div>

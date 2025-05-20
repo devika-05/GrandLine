@@ -1,0 +1,39 @@
+
+<div class="booking-grid">
+  <div class="booking-container" *ngFor="let booking of bookings">
+    <div class="booking-details">
+      <ul>
+        <li><strong>Booking ID:</strong> {{ booking?.bookingId }}</li>
+        <li><strong>Email:</strong> {{ booking?.email }}</li>
+        <li><strong>Amount:</strong> INR {{ booking?.amount }}</li>
+        <li><strong>Status:</strong> {{ booking?.status }}</li>
+      </ul>
+
+      <h3>Cruise Details:</h3>
+      <ul>
+        <li><strong>Cruise ID:</strong> {{ booking?.cruise?.cruiseId }}</li>
+        <li><strong>Name:</strong> {{ booking?.cruise?.name }}</li>
+        <li><strong>Departure Port:</strong> {{ booking?.cruise?.departurePort }}</li>
+        <li><strong>Destination:</strong> {{ booking?.cruise?.destination }}</li>
+        <li><strong>Departure Date:</strong> {{ booking?.cruise?.departureDate | date: 'mediumDate' }}</li>
+        <li><strong>Price:</strong> INR {{ booking?.cruise?.price }}</li>
+        <!-- You can display more cruise details as needed -->
+      </ul>
+
+      <h3>Passengers:</h3>
+      <ul>
+        <li *ngFor="let passenger of booking?.passengers">{{ passenger.name }} (Age: {{ passenger.age }})</li>
+      </ul>
+
+      <h3>Activities:</h3>
+      <ul>
+        <li *ngFor="let activity of booking?.activities">
+          <strong>{{ activity.name }}</strong> - {{ activity.type }} - Location: {{ activity.location }} - Price: INR {{ activity.price }}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+

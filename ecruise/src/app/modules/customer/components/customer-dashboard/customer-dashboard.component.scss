@@ -1,0 +1,94 @@
+/* Wrapper: Full dark background */
+.cruise-wrapper {
+  background-color: #000;
+  min-height: 91vh;
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+/* Container holding all cruise cards */
+.cruise-container {
+  padding-top: 10px;
+}
+
+/* Cruise card */
+.child {
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 198, 255, 0.15);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.child:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 198, 255, 0.3);
+}
+
+/* Cruise image */
+.profile {
+  width: 100%;
+  max-width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #00c6ff33;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.1);
+}
+
+/* Title */
+.cruise-title {
+  cursor: pointer;
+  color: #00c6ff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Description text */
+h5 {
+  color: #ccc;
+  font-weight: 400;
+}
+
+/* Horizontal line */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin: 10px 0;
+}
+
+/* Book button wrapper */
+.Button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Book button style */
+.Button button {
+  background: linear-gradient(135deg, #00c6ff, #007fff);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button button:hover {
+  background: linear-gradient(135deg, #00e1ff, #0099ff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.5);
+}

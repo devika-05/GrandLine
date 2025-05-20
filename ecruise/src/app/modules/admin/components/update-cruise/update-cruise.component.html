@@ -1,0 +1,121 @@
+<div style="margin-top: 50px">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working.. ">
+    <div class="parent">
+      <div class="child">
+        <div nz-row class="imgDiv">
+          <h1 style="margin-left: 200px">Update Cruise</h1>
+        </div>
+
+        <form nz-form [formGroup]="updateCruiseForm" enctype="multipart/form-data" >
+          <div nz-row>
+            <div nz-col>
+              <div class="file-upload-container">
+                <label class="file-upload-label">
+                  <span>Select a File</span>
+                  <input type="file"  accept="image/x-png, img/gif, image/jpeg" (change)="onFileSelected($event)" />
+                </label>
+                <div *ngIf="imagePreview" class="image-preview">
+                  <div class="circle-image">
+                    <img [src]="imagePreview" alt="Existing Image" class="preview-image" />
+                  </div>
+                </div>
+                <div *ngIf="existingImage" class="image-preview">
+                  <div class="circle-image">
+                    <img [src]="existingImage" alt="Existing Image" class="preview-image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Cruise ID</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Cruise ID" formControlName="cruiseId">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Name Of the Cruise</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Name Of the Cruise" formControlName="name">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Departure Port</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Departure Port" formControlName="departurePort">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Destination</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Destination" formControlName="destination">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Departure Date</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <nz-date-picker style="width: 100%;" nzFormat="yyyy-MM-dd" nzPlaceHolder="Departure Date" formControlName="departureDate"></nz-date-picker>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Price</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="number" placeholder="Price" formControlName="price">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Available Rooms</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="number" placeholder="Available Rooms" formControlName="availableRooms">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+          <br><br>
+
+          <div nz-row>
+            <div nz-col>
+              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="updateCruise()">
+                Update the Cruise
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nz-spin>
+</div>

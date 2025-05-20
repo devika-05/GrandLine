@@ -1,0 +1,89 @@
+
+
+<div style="margin-top: 50px">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working.. ">
+    <div class="parent">
+      <div class="child">
+        <div nz-row class="imgDiv">
+          <h2 style="margin-left: 230px">Update Activity</h2>
+        </div>
+
+        <form nz-form [formGroup]="updateActivityForm">
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Activity ID</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Activity ID" formControlName="activityId" [disabled]="true">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Enter the Cruise ID</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Cruise ID" formControlName="cruiseId" [disabled]="true">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Enter the Activity Name</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Activity Type" formControlName="name">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Enter the Activity Type</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Activity Type" formControlName="type">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Enter the Activity Location</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="text" placeholder="Location" formControlName="location">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+
+          <div nz-row>
+            <div nz-col>
+              <nz-form-item>
+                <nz-form-label>Enter the Activity Price</nz-form-label>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required !">
+                  <input nz-input type="number" placeholder="Price" formControlName="price">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+          <!-- Similar code for other editable form fields -->
+          <div nz-row>
+            <div nz-col>
+              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="updateActivity()">
+                Update Activity
+              </button>
+            </div>
+          </div>
+        </form> <!-- Move the closing </form> tag outside of the nz-spin component -->
+      </div>
+    </div>
+  </nz-spin>
+</div>

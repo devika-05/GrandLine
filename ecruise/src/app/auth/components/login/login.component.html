@@ -1,0 +1,37 @@
+<div class="login-container">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Logging in...">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h1 class="login-title">Log In</h1>
+        <p class="login-subtitle">Welcome back. You've been missed.</p>
+
+        <form nz-form [formGroup]="loginForm">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please enter your email.">
+              <nz-input-group nzPrefixIcon="user">
+                <input type="text" nz-input placeholder="Email" formControlName="email" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please enter your password.">
+              <nz-input-group nzPrefixIcon="lock">
+                <input type="password" nz-input placeholder="Password" formControlName="password" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+
+          <button nz-button class="login-btn" [nzType]="'primary'" (click)="login()" [disabled]="loginForm.invalid">
+            Log In
+          </button>
+
+          <div class="login-footer">
+            <span>Don't have an account?</span>
+            <a routerLink="/register">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nz-spin>
+</div>

@@ -1,0 +1,28 @@
+.activity-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity-box {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.activity-box:hover {
+  transform: translateY(-10px);
+}
+
+.activity-details {
+  font-size: 16px;
+  color: black
+}
+
+.activity-details p {
+  margin: 5px 0;
+}
+

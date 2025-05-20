@@ -1,0 +1,77 @@
+/* Set black background for the entire page or main container */
+body,
+.parent {
+  background-color: #000000 !important; /* Always black */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Parent container */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Floating box (child container) */
+.child {
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  background: #1e1e1e; /* Solid dark panel */
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 198, 255, 0.2), 0 4px 8px rgba(0, 198, 255, 0.1); /* Stronger floating glow */
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #00c6ff;
+  font-weight: 600;
+}
+
+/* Form inputs */
+input[type="email"],
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #121212;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 6px rgba(0, 198, 255, 0.5);
+  outline: none;
+}
+
+/* Passenger section title */
+h4 {
+  color: #00c6ff;
+  margin-top: 16px;
+}
+
+/* Buttons */
+button[type="button"],
+button[type="submit"] {
+  margin-top: 16px;
+  background-color: #00c6ff !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #00e1ff !important;
+  transform: translateY(-2px);
+}

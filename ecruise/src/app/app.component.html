@@ -1,0 +1,45 @@
+<nz-header class="main-header custom-navbar" nz-row nzType="flex">
+  <div class="navbar-title">
+    <a
+      style="font-family: Cambria;"
+      class="logo"
+      [routerLink]="
+        isAdminLoggedIn ? '/admin/dashboard' :
+        isCustomerLoggedIn ? '/customer/dashboard' : ''
+      "
+    >
+      {{
+        isAdminLoggedIn ? 'LoggedIn Admin' :
+        isCustomerLoggedIn ? 'LoggedIn Customer' :
+        'CruiseS'
+      }}
+    </a>
+  </div>
+
+  <div class="nav-links">
+    <!-- Show Sign Up / Login if NOT logged in -->
+    <ng-container *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+      <a nz-button class="b1" nztype="link" routerLink="/register" routerLinkActive="active">Sign up</a>
+      <a nz-button class="b1" nztype="link" routerLink="/login" routerLinkActive="active">Login</a>
+    </ng-container>
+
+    <!-- Admin Links -->
+    <ng-container *ngIf="isAdminLoggedIn">
+      <a nz-button class="b1" nztype="link" routerLink="/admin/dashboard" routerLinkActive="active">Cruises</a>
+      <a nz-button class="b1" nztype="link" routerLink="/admin/cruises" routerLinkActive="active">Post Cruise</a>
+      <a nz-button class="b1" nztype="link" routerLink="/admin/activities" routerLinkActive="active">Activities</a>
+      <a nz-button class="b1" nztype="link" routerLink="/admin/postActivities" routerLinkActive="active">Post Activities</a>
+      <a nz-button class="b1" nztype="link" routerLink="/admin/reservations" routerLinkActive="active">Reservations</a>
+      <a nz-button class="b1" nztype="link" (click)="logout()">Logout</a>
+    </ng-container>
+
+    <!-- Customer Links -->
+    <ng-container *ngIf="isCustomerLoggedIn">
+      <a nz-button class="b1" nztype="link" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
+      <a nz-button class="b1" nztype="link" [routerLink]="['/customer/all-bookings', email]" routerLinkActive="active">Bookings</a>
+      <a nz-button class="b1" nztype="link" (click)="logout()">Logout</a>
+    </ng-container>
+  </div>
+</nz-header>
+
+<router-outlet></router-outlet>

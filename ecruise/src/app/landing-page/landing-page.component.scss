@@ -1,0 +1,224 @@
+/* --- Animations --- */
+
+/* Fade in and slide up for main elements */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* White text glow pulse */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px #fff;
+    color: #fff;
+  }
+  50% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 15px #fff,
+      0 0 25px #fff,
+      0 0 35px #fff;
+    color: #eee;
+  }
+}
+
+/* Floating background video */
+@keyframes floatBG {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* --- Apply Animations --- */
+
+/* Header fade in and glow */
+header {
+  animation: fadeSlideUp 1s ease forwards;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 2px 15px rgba(255,255,255,0.3);
+}
+
+.app-title {
+  font-family: 'Anton', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+  margin: 0;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.tagline {
+  font-family: 'Anton', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.7);
+  margin-top: 5px;
+  animation: textGlow 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Main content fade in */
+.main-content {
+  animation: fadeSlideUp 1.2s ease forwards;
+  animation-delay: 0.5s;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  font-weight: bolder;
+  max-width: 1200px;
+  margin: 20px auto;
+  z-index: 2;
+  position: relative;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Sidebar wider, allow scrolling but hide scrollbar */
+.cruise-sidebar {
+  flex: 2;
+  padding: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.cruise-sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Cruise list as wrapped flex */
+.cruise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+/* Each cruise item */
+.cruise-item {
+  background: linear-gradient(145deg, #ffffffcc, #f0f0f0cc);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  width: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.15s);
+  border: 1.5px solid transparent;
+}
+
+.cruise-item:hover {
+  transform: translateY(-10px) scale(1.07);
+  box-shadow: 0 12px 30px rgba(255,255,255,0.8);
+  border-color: #fff;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  z-index: 3;
+}
+
+/* Cruise images bigger */
+.cruise-item img.profile {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  transition: filter 0.3s ease;
+}
+
+.cruise-item:hover img.profile {
+  filter: drop-shadow(0 0 10px #fff);
+}
+
+/* Cruise name and availability */
+.cruise-item h3 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  color: #222;
+  text-align: center;
+  user-select: none;
+}
+
+.cruise-item p {
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  margin: 0;
+  user-select: none;
+}
+
+/* Right info side */
+.cruise-info {
+  flex: 1;
+  padding: 20px;
+  color: #eee;
+  animation: fadeSlideUp 1.2s ease forwards;
+  animation-delay: 1s;
+  font-family: 'Anton', sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 8px rgba(255,255,255,0.85);
+  user-select: none;
+}
+
+/* Background Video floating */
+.bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  animation: floatBG 10s ease-in-out infinite;
+  filter: brightness(0.7) contrast(1.1) saturate(1.2);
+  object-fit: cover;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cruise-sidebar {
+    flex: unset;
+  }
+  .cruise-info {
+    padding: 10px;
+  }
+  .cruise-item {
+    width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.child {
+  padding: 20px;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imgDiv{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-badge{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile{
+  height: 180px;
+  width: 180px;
+  margin-bottom: 5px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.upload-label{
+  cursor: pointer;
+}
+
+.upload-icon{
+  width: 70px;
+  height: 35px;
+  margin-top: 10px;
+}
+
+
+.login-form-button {
+  width: 100%;
+}
+
+.login-form-margin {
+  margin-top: 20px;
+}
+
+/* Adjust the size and alignment of form items */
+nz-form-item {
+  margin-bottom: 16px;
+}
+
+nz-form-label {
+  width: 200px; /* Adjust as needed */
+  text-align: left;
+}
+
+nz-form-control {
+  flex: 1;
+}
+
+nz-form-control nz-input {
+  width: 300px;
+}

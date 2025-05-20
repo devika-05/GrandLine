@@ -1,0 +1,26 @@
+<div class="parent">
+  <div class="child">
+    <h1>Booking Summary</h1>
+    <ul>
+      <li><strong>Booking ID:</strong> {{ bookingDetails?.bookingId }}</li>
+      <li><strong>Email:</strong> {{ bookingDetails?.email }}</li>
+      <li><strong>Amount:</strong> INR {{ bookingDetails?.amount }}</li>
+      <li><strong>Status:</strong> {{ bookingDetails?.status }}</li>
+    </ul>
+
+    <h3>Passengers:</h3>
+    <ul>
+      <li *ngFor="let passenger of bookingDetails?.passengers">{{ passenger.name }} (Age: {{ passenger.age }})</li>
+    </ul>
+
+    <h3>Activities:</h3>
+    <ul>
+      <li *ngFor="let activity of bookingDetails?.activities">
+        <strong>{{ activity.name }}</strong> - {{ activity.type }} - Location: {{ activity.location }} - Price: INR {{ activity.price }}
+      </li>
+    </ul>
+
+    <button nz-button nzType="primary" (click)="initiatePayment(this.tAmount)" >Pay Now</button> <!-- Button for initiating payment -->
+    <!-- <button nz-button nzType="default" (click)="cancelBooking()">Cancel</button> -->
+  </div>
+</div>

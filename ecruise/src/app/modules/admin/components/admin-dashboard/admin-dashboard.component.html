@@ -1,0 +1,26 @@
+<div style="background-color: #f8f8f8; min-height: 91vh;">
+  <div style="padding-top: 10px;">
+
+    <div style="margin-top: 10px;" class="child" *ngFor="let c of cruise">
+      <div nz-row>
+        <div nz-col nzSpan="8">
+          <img class="profile" [src]="c.processedImg" alt="profile" style="height: 130px; width: 200px; border-radius: 10px;"/>
+
+        </div>
+
+        <div nz-col nzSpan="16">
+          <h2 style="cursor: pointer; color: #108ee9;">
+            {{c.name}}-{{c.departurePort}}-{{c.destination}}
+          </h2>
+          <hr>
+          <h5>Departure Date:<b> {{c.departureDate}}</b><br> Price: INR <b>{{c.price}}</b><br> Available Rooms:<b> {{c.availableRooms}}</b></h5>
+          <hr>
+        </div>
+        <div class="Button" style="float: right;">
+          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" routerLink="/admin/cruises/{{c.id}}">Update</button>
+          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteCruise(c.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

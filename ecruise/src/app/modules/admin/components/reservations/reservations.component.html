@@ -1,0 +1,29 @@
+<div class="reservation-container">
+  <ng-container *ngIf="reser && reser.length > 0">
+    <div class="reservation-card" *ngFor="let reservation of reser">
+      <div class="reservation-content">
+        <h2>Reservation</h2>
+        <h3>Reservation ID: {{ reservation.reservationId }}</h3>
+        <p>Cruise ID: {{ reservation.cruiseId }}</p>
+        <p>Amount Paid: {{ reservation.totalPaid }}</p>
+        <h4>Passengers</h4>
+        <ul>
+          <li *ngFor="let passenger of reservation.passengers">
+            Name: {{ passenger.name }}, Age: {{ passenger.age }}
+          </li>
+        </ul>
+        <h4>Activities</h4>
+        <ul>
+          <li *ngFor="let activity of reservation.activities">
+            Name: {{ activity.name }}, Location: {{ activity.location }}, Price: {{ activity.price }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!reser || reser.length === 0">
+    <div class="reservation-content">
+      <p>No reservations found.</p>
+    </div>
+  </ng-container>
+</div>

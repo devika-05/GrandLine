@@ -1,0 +1,36 @@
+<!-- Header -->
+<header>
+  <h1 class="app-title">GrandLine Cruises</h1>
+  <p class="tagline">Set Sail on Your Legendary Adventure</p>
+</header>
+
+<!-- Main content -->
+<div class="main-content">
+  <!-- Left sidebar with list of cruises -->
+  <div class="cruise-sidebar">
+    <div class="cruise-list">
+      <div *ngFor="let c of cruise; let i = index" class="cruise-item" [style.--i]="i">
+        <img class="profile" [src]="c.processedImg" alt="Cruise Image" />
+        <div class="cruise-details">
+          <h3>{{ c.name }}</h3>
+          <p>Available: {{ c.availableRooms }}</p>
+          <p class="departure-dest">{{ c.departurePort }} → {{ c.destination }}</p>
+          <p class="price">INR {{ c.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side with info -->
+  <div class="cruise-info">
+    <h2>
+      Embark on endless adventures with us! Discover dream destinations, indulge in luxury onboard, and create unforgettable memories. Whether you seek exotic escapades or tranquil retreats, our cruise booking website navigates you to your perfect voyage. Your journey starts here.
+    </h2>
+  </div>
+</div>
+
+<!-- Background Video -->
+<video autoplay muted loop class="bg-video">
+  <source src="assets/idea.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
